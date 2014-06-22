@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.waveq.konkurs.service;
+
+package com.waveq.konkurs.controllers2;
 
 import com.waveq.konkurs.entity.Country;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,16 +16,17 @@ import javax.persistence.PersistenceContext;
  * @author Szymon
  */
 @Stateless
-public class CountryManager {
+public class CountryFacade extends AbstractFacade<Country> {
+    @PersistenceContext(unitName = "konkursPU")
+    private EntityManager em;
 
-    @PersistenceContext
-    EntityManager em;
-
-    public Country find(char i) {
-        return em.find(Country.class, i);
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
     }
 
-    public List findAllCountries() {
-        return em.createNamedQuery("Country.findAll").getResultList();
+    public CountryFacade() {
+        super(Country.class);
     }
+    
 }

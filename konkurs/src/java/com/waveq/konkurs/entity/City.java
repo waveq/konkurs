@@ -62,7 +62,7 @@ public class City implements Serializable {
     @NotNull
     @Column(name = "population", nullable = false)
     private int population;
-    @OneToMany(mappedBy = "capital", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "capital", fetch = FetchType.LAZY)
     private List<Country> countryList;
 
     public City() {

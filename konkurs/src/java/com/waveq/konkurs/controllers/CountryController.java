@@ -27,18 +27,7 @@ public class CountryController implements Serializable {
    CountryManager cm;
     
     
-//    public String getAllCountries() {
-////        EntityManager em = DBManager.getManager().createEntityManager();
-////        List<Country> list = em.createNamedQuery("Country.findAll").getResultList();
-////        em.close();
-//        
-//        
-//        List<Country> list = cm.findAllCountries();
-//        
-//        
-//        for(Country count : list) {
-//            System.out.println(count.getName());
-//        }
-//        return "dd";
-//    }
+    public List getAllCountries() {
+        return cm.findAllCountries();
+    }
 }

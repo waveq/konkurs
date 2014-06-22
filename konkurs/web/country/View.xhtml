@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCountryTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCountryLabel_code}"/>
+                    <h:outputText value="#{countryController.selected.code}" title="#{bundle.ViewCountryTitle_code}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_name}"/>
+                    <h:outputText value="#{countryController.selected.name}" title="#{bundle.ViewCountryTitle_name}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_continent}"/>
+                    <h:outputText value="#{countryController.selected.continent}" title="#{bundle.ViewCountryTitle_continent}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_region}"/>
+                    <h:outputText value="#{countryController.selected.region}" title="#{bundle.ViewCountryTitle_region}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_surfacearea}"/>
+                    <h:outputText value="#{countryController.selected.surfacearea}" title="#{bundle.ViewCountryTitle_surfacearea}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_indepyear}"/>
+                    <h:outputText value="#{countryController.selected.indepyear}" title="#{bundle.ViewCountryTitle_indepyear}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_population}"/>
+                    <h:outputText value="#{countryController.selected.population}" title="#{bundle.ViewCountryTitle_population}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_lifeexpectancy}"/>
+                    <h:outputText value="#{countryController.selected.lifeexpectancy}" title="#{bundle.ViewCountryTitle_lifeexpectancy}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_gnp}"/>
+                    <h:outputText value="#{countryController.selected.gnp}" title="#{bundle.ViewCountryTitle_gnp}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_gnpold}"/>
+                    <h:outputText value="#{countryController.selected.gnpold}" title="#{bundle.ViewCountryTitle_gnpold}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_localname}"/>
+                    <h:outputText value="#{countryController.selected.localname}" title="#{bundle.ViewCountryTitle_localname}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_governmentform}"/>
+                    <h:outputText value="#{countryController.selected.governmentform}" title="#{bundle.ViewCountryTitle_governmentform}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_headofstate}"/>
+                    <h:outputText value="#{countryController.selected.headofstate}" title="#{bundle.ViewCountryTitle_headofstate}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_code2}"/>
+                    <h:outputText value="#{countryController.selected.code2}" title="#{bundle.ViewCountryTitle_code2}"/>
+                    <h:outputText value="#{bundle.ViewCountryLabel_capital}"/>
+                    <h:outputText value="#{countryController.selected.capital}" title="#{bundle.ViewCountryTitle_capital}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{countryController.destroyAndView}" value="#{bundle.ViewCountryDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCountryEditLink}"/>
+                <br />
+                <h:commandLink action="#{countryController.prepareCreate}" value="#{bundle.ViewCountryCreateLink}" />
+                <br />
+                <h:commandLink action="#{countryController.prepareList}" value="#{bundle.ViewCountryShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCountryIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

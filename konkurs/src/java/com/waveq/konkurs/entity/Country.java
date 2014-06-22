@@ -107,10 +107,10 @@ public class Country implements Serializable {
     @Size(min = 1, max = 2)
     @Column(name = "code2", nullable = false, length = 2)
     private String code2;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "country", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "country", fetch = FetchType.LAZY)
     private List<Countrylanguage> countrylanguageList;
     @JoinColumn(name = "capital", referencedColumnName = "id")
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private City capital;
 
     public Country() {

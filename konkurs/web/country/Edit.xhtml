@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCountryTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCountryLabel_code}" for="code" />
+                    <h:inputText id="code" value="#{countryController.selected.code}" title="#{bundle.EditCountryTitle_code}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_code}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{countryController.selected.name}" title="#{bundle.EditCountryTitle_name}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_name}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_continent}" for="continent" />
+                    <h:inputText id="continent" value="#{countryController.selected.continent}" title="#{bundle.EditCountryTitle_continent}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_continent}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_region}" for="region" />
+                    <h:inputText id="region" value="#{countryController.selected.region}" title="#{bundle.EditCountryTitle_region}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_region}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_surfacearea}" for="surfacearea" />
+                    <h:inputText id="surfacearea" value="#{countryController.selected.surfacearea}" title="#{bundle.EditCountryTitle_surfacearea}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_surfacearea}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_indepyear}" for="indepyear" />
+                    <h:inputText id="indepyear" value="#{countryController.selected.indepyear}" title="#{bundle.EditCountryTitle_indepyear}" />
+                    <h:outputLabel value="#{bundle.EditCountryLabel_population}" for="population" />
+                    <h:inputText id="population" value="#{countryController.selected.population}" title="#{bundle.EditCountryTitle_population}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_population}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_lifeexpectancy}" for="lifeexpectancy" />
+                    <h:inputText id="lifeexpectancy" value="#{countryController.selected.lifeexpectancy}" title="#{bundle.EditCountryTitle_lifeexpectancy}" />
+                    <h:outputLabel value="#{bundle.EditCountryLabel_gnp}" for="gnp" />
+                    <h:inputText id="gnp" value="#{countryController.selected.gnp}" title="#{bundle.EditCountryTitle_gnp}" />
+                    <h:outputLabel value="#{bundle.EditCountryLabel_gnpold}" for="gnpold" />
+                    <h:inputText id="gnpold" value="#{countryController.selected.gnpold}" title="#{bundle.EditCountryTitle_gnpold}" />
+                    <h:outputLabel value="#{bundle.EditCountryLabel_localname}" for="localname" />
+                    <h:inputText id="localname" value="#{countryController.selected.localname}" title="#{bundle.EditCountryTitle_localname}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_localname}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_governmentform}" for="governmentform" />
+                    <h:inputText id="governmentform" value="#{countryController.selected.governmentform}" title="#{bundle.EditCountryTitle_governmentform}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_governmentform}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_headofstate}" for="headofstate" />
+                    <h:inputText id="headofstate" value="#{countryController.selected.headofstate}" title="#{bundle.EditCountryTitle_headofstate}" />
+                    <h:outputLabel value="#{bundle.EditCountryLabel_code2}" for="code2" />
+                    <h:inputText id="code2" value="#{countryController.selected.code2}" title="#{bundle.EditCountryTitle_code2}" required="true" requiredMessage="#{bundle.EditCountryRequiredMessage_code2}"/>
+                    <h:outputLabel value="#{bundle.EditCountryLabel_capital}" for="capital" />
+                    <h:selectOneMenu id="capital" value="#{countryController.selected.capital}" title="#{bundle.EditCountryTitle_capital}" >
+                        <f:selectItems value="#{cityController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{countryController.update}" value="#{bundle.EditCountrySaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCountryViewLink}"/>
+                <br />
+                <h:commandLink action="#{countryController.prepareList}" value="#{bundle.EditCountryShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCountryIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

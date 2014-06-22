@@ -32,7 +32,14 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Countrylanguage.findByCountrycode", query = "SELECT c FROM Countrylanguage c WHERE c.countrylanguagePK.countrycode = :countrycode"),
     @NamedQuery(name = "Countrylanguage.findByLanguage", query = "SELECT c FROM Countrylanguage c WHERE c.countrylanguagePK.language = :language"),
     @NamedQuery(name = "Countrylanguage.findByIsofficial", query = "SELECT c FROM Countrylanguage c WHERE c.isofficial = :isofficial"),
-    @NamedQuery(name = "Countrylanguage.findByPercentage", query = "SELECT c FROM Countrylanguage c WHERE c.percentage = :percentage")})
+    @NamedQuery(name = "Countrylanguage.findByPercentage", query = "SELECT c FROM Countrylanguage c WHERE c.percentage = :percentage"),
+    @NamedQuery(name = "Countrylanguage.findAllSorted", query = "SELECT c FROM Countrylanguage c "
+            + "ORDER BY c.country.population DESC, c.countrylanguagePK.language ASC"),
+    @NamedQuery(name = "Countrylanguage.myFind", query = "SELECT c.countrylanguagePK.language AS lang, SUM(c.country.population) AS population FROM Countrylanguage c "
+            + "GROUP BY lang ORDER BY population DESC, lang ASC"),
+    @NamedQuery(name = "Countrylanguage.findByIsofficialSorted", query = "SELECT c FROM Countrylanguage c WHERE c.isofficial = :isofficial "
+            + "ORDER BY c.country.continent ASC, c.country.name ASC, c.percentage DESC")})
+
 public class Countrylanguage implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
@@ -46,7 +53,7 @@ public class Countrylanguage implements Serializable {
     @Column(name = "percentage", nullable = false)
     private float percentage;
     @JoinColumn(name = "countrycode", referencedColumnName = "code", nullable = false, insertable = false, updatable = false)
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Country country;
 
     public Countrylanguage() {
