@@ -35,8 +35,13 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Countrylanguage.findByPercentage", query = "SELECT c FROM Countrylanguage c WHERE c.percentage = :percentage"),
     @NamedQuery(name = "Countrylanguage.findAllSorted", query = "SELECT c FROM Countrylanguage c "
             + "ORDER BY c.country.population DESC, c.countrylanguagePK.language ASC"),
-    @NamedQuery(name = "Countrylanguage.myFind", query = "SELECT c.countrylanguagePK.language AS lang, SUM(c.country.population) AS population FROM Countrylanguage c "
-            + "GROUP BY lang ORDER BY population DESC, lang ASC"),
+    @NamedQuery(name = "Countrylanguage.myFind", query = 
+            "SELECT c.countrylanguagePK.language AS lang, "
+                + "SUM(c.country.population) AS population "
+//                + ", SUM(c.country.population) / (SELECT Country.population FROM Country)"
+                + "FROM Countrylanguage c "
+                + "GROUP BY lang "
+                + "ORDER BY population DESC, lang ASC"),
     @NamedQuery(name = "Countrylanguage.findByIsofficialSorted", query = "SELECT c FROM Countrylanguage c WHERE c.isofficial = :isofficial "
             + "ORDER BY c.country.continent ASC, c.country.name ASC, c.percentage DESC")})
 

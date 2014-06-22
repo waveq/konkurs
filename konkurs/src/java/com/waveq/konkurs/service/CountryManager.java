@@ -21,8 +21,8 @@ public class CountryManager {
     @PersistenceContext
     EntityManager em;
 
-    public Country find(char i) {
-        return em.find(Country.class, i);
+    public Country find(String code) {
+        return em.find(Country.class, code);
     }
 
     public List findAllCountries() {

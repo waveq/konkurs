@@ -7,7 +7,9 @@
 package com.waveq.konkurs.controllers;
 
 import com.waveq.konkurs.entity.Country;
+import com.waveq.konkurs.entity.Countrylanguage;
 import com.waveq.konkurs.service.CountryManager;
+import com.waveq.konkurs.service.CountrylanguageManager;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -25,9 +27,16 @@ public class CountryController implements Serializable {
     
    @Inject
    CountryManager cm;
+   
+   @Inject
+   CountrylanguageManager clm;
     
+   Country country;
+   List<Countrylanguage> languages;
     
-    public List getAllCountries() {
-        return cm.findAllCountries();
+    public String findCountryByCode(String code) {
+        country = cm.find(code);
+        languages = clm.findCountryLanguagesByCode(code);
+        return country.getName();
     }
 }

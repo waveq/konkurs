@@ -8,15 +8,15 @@
 
         <ui:composition template="./myTemplate.xhtml">
 
-    <f:metadata>
-        <f:viewParam name="imageID" value="dsadsad"/>
-    </f:metadata>
+            <f:metadata>
+                <f:viewParam name="param" value="#{code}"/>
+            </f:metadata>
 
             <ui:define name="bot">
-               dsadads <strong>#{name}</strong>
+                <h1>Language use in #{countryBean.findCountryByCode(code)}</h1>
             </ui:define>
 
-        </ui:composition>
+        </ui:composition> 
 
     </body>
 </html>

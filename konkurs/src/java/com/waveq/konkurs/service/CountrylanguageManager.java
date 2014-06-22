@@ -6,6 +6,7 @@
 package com.waveq.konkurs.service;
 
 import com.waveq.konkurs.entity.Country;
+import com.waveq.konkurs.entity.Countrylanguage;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -21,10 +22,6 @@ public class CountrylanguageManager {
     @PersistenceContext
     EntityManager em;
 
-    public Country find(char i) {
-        return em.find(Country.class, i);
-    }
-
     public List findAllCountrylanguages() {
         List l = em.createNamedQuery("Countrylanguage.myFind").getResultList();
         return l;
@@ -39,4 +36,9 @@ public class CountrylanguageManager {
         return em.createNamedQuery("Countrylanguage.findByIsofficialSorted").
                 setParameter("isofficial", true).getResultList();
     }
+    
+    public List findCountryLanguagesByCode(String code) {
+        return em.createNamedQuery("Countrylanguage.findByCountrycode").setParameter("countrycode", code).getResultList();
+    }
+   
 }

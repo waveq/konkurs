@@ -5,8 +5,8 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-     <ui:define name="bot">
-         
+    <ui:define name="bot">
+
         <h:dataTable value="#{countrylanguageBean.officialCountryLanguages}" var="item" border="0"
                      cellpadding="2" cellspacing="0" 
                      rules="all" style="border:solid 1px">
@@ -55,9 +55,12 @@
                 <f:facet name="header">
                     <h:outputText value="&nbsp;"/>
                 </f:facet>
-                <h:outputText value="Details" />
+                <!--<h:link outcome="/countries/#{item.country.code}" value="Details"/>-->
+                <h:outputLink id="amazonLink" value="countries/#{item.country.code}">
+                    Details
+                </h:outputLink>
             </h:column>
         </h:dataTable>
-         
+
     </ui:define>
 </ui:composition>
