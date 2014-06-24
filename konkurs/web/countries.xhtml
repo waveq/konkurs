@@ -32,13 +32,15 @@
                 <f:facet name="header">
                     <h:outputText value="Population"/>
                 </f:facet>
-                <h:outputText value="#{item.country.population}" />
+                <h:outputText value="#{item.country.population}" >
+                    <f:convertNumber />
+                </h:outputText>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Official Language Use %"/>
                 </f:facet>
-                <h:outputText value="#{item.percentage * 0.01}" >
+                <h:outputText value="#{item.percentage}" >
                     <f:convertNumber minFractionDigits="2"  maxFractionDigits="2"/>
                 </h:outputText>
             </h:column>
@@ -55,7 +57,6 @@
                 <f:facet name="header">
                     <h:outputText value="&nbsp;"/>
                 </f:facet>
-                <!--<h:link outcome="/countries/#{item.country.code}" value="Details"/>-->
                 <h:outputLink id="amazonLink" value="countries/#{item.country.code}">
                     Details
                 </h:outputLink>

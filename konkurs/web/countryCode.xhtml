@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <body>
 
@@ -13,7 +14,13 @@
             </f:metadata>
 
             <ui:define name="bot">
-                <h1>Language use in #{countryBean.findCountryByCode(code)}</h1>
+                <h1>Language use in #{countryBean.getCountryByCode(code)}</h1>
+                <div id="myid" >
+                </div>
+                <ui:repeat var="lang" value="#{countrylanguageBean.getCountrylanguageByCode(code)}">
+                    <p class="perc">#{lang.percentage}</p>
+                    <p class="country">#{lang.countrylanguagePK.language}</p>
+                </ui:repeat>
             </ui:define>
 
         </ui:composition> 

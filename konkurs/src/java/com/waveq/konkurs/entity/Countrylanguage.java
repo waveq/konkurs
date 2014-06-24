@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,6 +28,24 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "countrylanguage")
 @XmlRootElement
+
+
+//"SELECT" +
+//"  language," +
+//"  SUM(population) AS total_population," +
+//"  CAST(100 * SUM(population) AS REAL) / (SELECT SUM(population) FROM country) AS rel_population" +
+//"FROM countryLanguage cl" +
+//"LEFT JOIN country c ON c.code = cl.countrycode" +
+//"GROUP BY language" +
+//"ORDER BY language ASC;"
+// @NamedNativeQuery(name = "nativeQuery", query = 
+//            "SELECT cl.language, SUM(c.popuation) AS total_population, "
+//                + "SUM(c.population) AS REAL) / (SELECT SUM(population) FROM country) AS rel_population"
+//                +", FROM Countrylanguage cl)"
+//                + "LEFT JOIN country c ON c.code = cl.countrycode"
+//                + "GROUP BY cl.language "
+//                + "ORDER BY cl.language ASC", resultClass = Countrylanguage.class)
+// @NamedNativeQuery(, resultClass = Countrylanguage.class)
 @NamedQueries({
     @NamedQuery(name = "Countrylanguage.findAll", query = "SELECT c FROM Countrylanguage c"),
     @NamedQuery(name = "Countrylanguage.findByCountrycode", query = "SELECT c FROM Countrylanguage c WHERE c.countrylanguagePK.countrycode = :countrycode"),
@@ -35,9 +54,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Countrylanguage.findByPercentage", query = "SELECT c FROM Countrylanguage c WHERE c.percentage = :percentage"),
     @NamedQuery(name = "Countrylanguage.findAllSorted", query = "SELECT c FROM Countrylanguage c "
             + "ORDER BY c.country.population DESC, c.countrylanguagePK.language ASC"),
-    @NamedQuery(name = "Countrylanguage.myFind", query = 
+    @NamedQuery(name = "Countrylanguage.findLanguageAndPopulation", query = 
             "SELECT c.countrylanguagePK.language AS lang, "
-                + "SUM(c.country.population) AS population "
+                + "SUM(c.country.population) AS population, "
+                    + "population "
+                  
 //                + ", SUM(c.country.population) / (SELECT Country.population FROM Country)"
                 + "FROM Countrylanguage c "
                 + "GROUP BY lang "

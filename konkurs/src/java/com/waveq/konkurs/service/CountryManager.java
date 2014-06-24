@@ -28,4 +28,8 @@ public class CountryManager {
     public List findAllCountries() {
         return em.createNamedQuery("Country.findAll").getResultList();
     }
+
+    public List getWholePopulation() {
+        return em.createNamedQuery("Country.findBWholePopulation").getResultList();
+    }
 }

@@ -48,6 +48,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Country.findByLocalname", query = "SELECT c FROM Country c WHERE c.localname = :localname"),
     @NamedQuery(name = "Country.findByGovernmentform", query = "SELECT c FROM Country c WHERE c.governmentform = :governmentform"),
     @NamedQuery(name = "Country.findByHeadofstate", query = "SELECT c FROM Country c WHERE c.headofstate = :headofstate"),
+    @NamedQuery(name = "Country.findBWholePopulation", query = "SELECT SUM(c.population) FROM Country c"),
+    
     @NamedQuery(name = "Country.findByCode2", query = "SELECT c FROM Country c WHERE c.code2 = :code2")})
 public class Country implements Serializable {
     private static final long serialVersionUID = 1L;

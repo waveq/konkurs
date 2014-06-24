@@ -34,9 +34,10 @@ public class CountryController implements Serializable {
    Country country;
    List<Countrylanguage> languages;
     
-    public String findCountryByCode(String code) {
+    public String getCountryByCode(String code) {
         country = cm.find(code);
         languages = clm.findCountryLanguagesByCode(code);
         return country.getName();
     }
+    
 }

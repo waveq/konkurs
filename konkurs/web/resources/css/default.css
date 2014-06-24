@@ -27,3 +27,21 @@ a:link:hover, a:visited:hover  {
   font-weight : bold;
   text-decoration : underline;
 }
+
+.perc {
+    visibility:hidden;
+}
+
+.country {
+    visibility:hidden;
+}
+
+.uiRepeat {
+    visibility:hidden;
+}
+
+#myid {
+    padding: 100px;
+    height: 1000px;
+    width: 1000px;
+}

@@ -19,13 +19,18 @@
                 <f:facet name="header">
                     <h:outputText value="Population Use"/>
                 </f:facet>
-                <h:outputText value="#{item[1]}"/>
+                <!--floor value-->
+                <h:outputText value="#{item[1] - (item[1])%1}" >
+                    <f:convertNumber/>
+                </h:outputText>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Global Population % Use"/>
                 </f:facet>
-                <h:outputText value="#{item[2]}"/>
+                <h:outputText value="#{item[2]}">
+                    <f:convertNumber minFractionDigits="2"  maxFractionDigits="2"/>
+                </h:outputText>
             </h:column>
         </h:dataTable>
     </ui:define>

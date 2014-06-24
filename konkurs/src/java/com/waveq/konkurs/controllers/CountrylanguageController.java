@@ -27,10 +27,19 @@ public class CountrylanguageController implements Serializable {
 
     @Inject
     CountrylanguageManager clm;
+    
+    @Inject
+    CountryManager cm;
     Countrylanguage countrylanguage;
 
     public List getAllCountryLanguages() {
-        List list = clm.findAllCountrylanguages();
+        List<Object[]> list = clm.findAllCountrylanguages();
+        Long population = (Long) cm.getWholePopulation().get(0);
+      double pop = population;
+        for(int i=0; i<list.size();i++)
+        {
+            list.get(i)[2] = (Long)list.get(i)[2]/pop * 100;
+        }
         return list;
     }
 
@@ -39,4 +48,7 @@ public class CountrylanguageController implements Serializable {
 
     }
 
+    public List getCountrylanguageByCode(String code) {
+        return clm.findCountryLanguagesByCode(code);
+    }
 }

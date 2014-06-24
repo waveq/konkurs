@@ -23,7 +23,7 @@ public class CountrylanguageManager {
     EntityManager em;
 
     public List findAllCountrylanguages() {
-        List l = em.createNamedQuery("Countrylanguage.myFind").getResultList();
+        List l = em.createNamedQuery("Countrylanguage.findLanguageAndPopulation").getResultList();
         return l;
     } 
     
@@ -33,12 +33,13 @@ public class CountrylanguageManager {
     }
     
     public List findSortedOfficialCountrylanguages() {
-        return em.createNamedQuery("Countrylanguage.findByIsofficialSorted").
-                setParameter("isofficial", true).getResultList();
+        return em.createNamedQuery("Countrylanguage.findByIsofficialSorted")
+                .setParameter("isofficial", true).getResultList();
     }
     
     public List findCountryLanguagesByCode(String code) {
-        return em.createNamedQuery("Countrylanguage.findByCountrycode").setParameter("countrycode", code).getResultList();
+        return em.createNamedQuery("Countrylanguage.findByCountrycode")
+                .setParameter("countrycode", code).getResultList();
     }
    
 }
