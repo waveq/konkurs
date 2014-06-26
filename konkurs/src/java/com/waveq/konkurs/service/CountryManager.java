@@ -6,7 +6,6 @@
 package com.waveq.konkurs.service;
 
 import com.waveq.konkurs.entity.Country;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,13 +22,5 @@ public class CountryManager {
 
     public Country find(String code) {
         return em.find(Country.class, code);
-    }
-
-    public List findAllCountries() {
-        return em.createNamedQuery("Country.findAll").getResultList();
-    }
-
-    public List getWholePopulation() {
-        return em.createNamedQuery("Country.findBWholePopulation").getResultList();
     }
 }

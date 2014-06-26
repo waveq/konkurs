@@ -14,25 +14,25 @@
                 <f:facet name="header">
                     <h:outputText value="Contintent"/>
                 </f:facet>
-                <h:outputText value="#{item.country.continent}"/>
+                <h:outputText value="#{item[0]}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Country"/>
                 </f:facet>
-                <h:outputText value="#{item.country.name}"/>
+                <h:outputText value="#{item[1]}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Language"/>
                 </f:facet>
-                <h:outputText value="#{item.countrylanguagePK.language}"/>
+                <h:outputText value="#{item[2]}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Population"/>
                 </f:facet>
-                <h:outputText value="#{item.country.population}" >
+                <h:outputText value="#{item[3]}" >
                     <f:convertNumber />
                 </h:outputText>
             </h:column>
@@ -40,7 +40,7 @@
                 <f:facet name="header">
                     <h:outputText value="Official Language Use %"/>
                 </f:facet>
-                <h:outputText value="#{item.percentage}" >
+                <h:outputText value="#{item[4]}" >
                     <f:convertNumber minFractionDigits="2"  maxFractionDigits="2"/>
                 </h:outputText>
             </h:column>
@@ -48,8 +48,8 @@
                 <f:facet name="header">
                     <h:outputText value="Official Language Population Use"/>
                 </f:facet>
-                <!-- Calculate percent * population and flooring the value -->
-                <h:outputText value="#{(item.percentage * 0.01 * item.country.population) - ((item.percentage * 0.01 * item.country.population)%1)}" >
+                 <!--floor--> 
+                <h:outputText value="#{(item[5] - (item[5]%1))}" >
                     <f:convertNumber/>
                 </h:outputText>
             </h:column>
@@ -57,7 +57,7 @@
                 <f:facet name="header">
                     <h:outputText value="&nbsp;"/>
                 </f:facet>
-                <h:outputLink id="amazonLink" value="countries/#{item.country.code}">
+                <h:outputLink value="countries/#{item[6]}">
                     Details
                 </h:outputLink>
             </h:column>

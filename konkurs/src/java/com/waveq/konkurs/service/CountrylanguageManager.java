@@ -5,8 +5,6 @@
  */
 package com.waveq.konkurs.service;
 
-import com.waveq.konkurs.entity.Country;
-import com.waveq.konkurs.entity.Countrylanguage;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -40,6 +38,10 @@ public class CountrylanguageManager {
     public List findCountryLanguagesByCode(String code) {
         return em.createNamedQuery("Countrylanguage.findByCountrycode")
                 .setParameter("countrycode", code).getResultList();
+    }
+    
+     public List getWholePopulation() {
+        return em.createNamedQuery("Country.getWholePopulation").getResultList();
     }
    
 }

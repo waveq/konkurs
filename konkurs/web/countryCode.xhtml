@@ -14,16 +14,16 @@
             </f:metadata>
 
             <ui:define name="bot">
-                <h1>Language use in #{countryBean.getCountryByCode(code)}</h1>
-                <div id="myid" >
+                <h1>Language use in #{countrylanguageBean.getCountryByCode(code)}</h1>
+                <div class="chart">
+                    <svg class="pie-a"></svg>
                 </div>
                 <ui:repeat var="lang" value="#{countrylanguageBean.getCountrylanguageByCode(code)}">
                     <p class="perc">#{lang.percentage}</p>
                     <p class="country">#{lang.countrylanguagePK.language}</p>
                 </ui:repeat>
             </ui:define>
-
-        </ui:composition> 
+        </ui:composition>
 
     </body>
 </html>
