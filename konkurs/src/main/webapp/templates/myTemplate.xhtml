@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="css" name="default.css" />
+	<h:outputStylesheet library="css" name="cssLayout.css" />
+	<h:outputStylesheet library="css" name="chart.css" />
+
+	<h:outputScript library="js" name="jquery-2.1.0.js" />
+	<h:outputScript library="js" name="d3.ay-pie-chart.js" />
+	<h:outputScript library="js" name="d3.js" />
+	<h:outputScript library="js" name="piechart.js" />
+
+
+	<title>Konkurs</title>
+</h:head>
+
+<h:body>
+	<ui:insert name="content">
+		<div>
+			<h1>Countries and languages</h1>
+		</div>
+		<div>
+			<h:outputLink value="/linkSaver/countries">Countries</h:outputLink>
+			<br />
+			<h:outputLink value="/linkSaver/groupedCountries">Languages by Numbers</h:outputLink>
+		</div>
+	</ui:insert>
+	<ui:insert name="bot">
+	</ui:insert>
+</h:body>
+</html>
