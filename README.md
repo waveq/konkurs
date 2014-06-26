@@ -21,6 +21,9 @@ Dodać w resources:
       <property name="ssl" value="true"></property>
     </jdbc-resource>
 `
+Twoja_sciezka_do_glassfisha\glassfish4\glassfish\domains\domain1\lib\ext
+
+Dodać plik z katalogu głównego: `postgresql-9.2-1002.jdbc4.jar`
 
 Strona działa pod linkiem:
 
