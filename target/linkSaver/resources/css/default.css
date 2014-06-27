@@ -40,6 +40,8 @@ a:link:hover, a:visited:hover  {
     visibility:hidden;
 }
 
-.table {
-	border: solid 1px;
+#myid {
+    padding: 100px;
+    height: 1000px;
+    width: 1000px;
 }

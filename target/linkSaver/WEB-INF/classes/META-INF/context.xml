@@ -1,0 +1,12 @@
+<!-- <Context>
+	<Loader delegate=true />
+	<Resource
+		name="java:app/jdbc/myDatasource" 
+		type="javax.sql.DataSource"
+		username="mmmwsvrkwfstit"
+		password="vlliFqilBOUVyWVY-FZfV50Wa3"
+		url="ec2-54-225-101-124.compute-1.amazonaws.com"
+		driverClassName="org.postgresql.ds.PGSimpleDataSource"
+	</Resource>
+</Context>
+ -->

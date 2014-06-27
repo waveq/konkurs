@@ -12,7 +12,5 @@
     <property name="ServerName" value="ec2-54-225-101-124.compute-1.amazonaws.com"/>
     <property name="Ssl" value="true"/>
     <property name="Sslfactory" value="org.postgresql.ssl.NonValidatingFactory"/>
-    <property name="max-pool-size" value="1"/>
-    <property name="steady-pool-size" value="1"/>
   </jdbc-connection-pool>
 </resources>
