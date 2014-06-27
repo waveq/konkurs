@@ -11,16 +11,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * 
  * @author Szymon
  */
 @Stateless
 public class CountryManager {
 
-    @PersistenceContext
-    EntityManager em;
+	@PersistenceContext
+	EntityManager em;
 
-    public Country find(String code) {
-        return em.find(Country.class, code);
-    }
+	public Country find(String code) {
+		return em.find(Country.class, code);
+	}
 }

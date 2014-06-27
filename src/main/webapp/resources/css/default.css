@@ -45,3 +45,7 @@ a:link:hover, a:visited:hover  {
     height: 1000px;
     width: 1000px;
 }
+
+.table {
+	border: solid 1px;
+}
