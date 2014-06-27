@@ -2,7 +2,6 @@
 /konkurs/build/
 /konkurs/dist/
 /target/
-/.classpath
-/konkurs/.metadata
-/konkurs/.settings
-/konkurs/.classpath
+.classpath/*
+.metadata/*
+.settings

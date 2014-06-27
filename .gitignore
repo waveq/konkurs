@@ -1,7 +1,7 @@
 /konkurs/nbproject/private/
 /konkurs/build/
 /konkurs/dist/
-/target/
-.classpath/*
+target/*
+.classpath
 .metadata/*
-.settings
+.settings/*
