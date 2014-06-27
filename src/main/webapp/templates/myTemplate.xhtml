@@ -25,9 +25,10 @@
 			<h1>Countries and languages</h1>
 		</div>
 		<div>
-			<h:outputLink value="/linkSaver/countries">Countries</h:outputLink>
+			<h:link value="Countries" outcome="countries" />
 			<br />
-			<h:outputLink value="/linkSaver/groupedCountries">Languages by Numbers</h:outputLink>
+			<h:link value="Languages by Numbers" outcome="groupedCountries" />
+
 		</div>
 	</ui:insert>
 	<ui:insert name="bot">
