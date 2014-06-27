@@ -14,11 +14,11 @@
 		is-connection-validation-required="false"
 		is-isolation-level-guaranteed="true" lazy-connection-association="false"
 		lazy-connection-enlistment="false" match-connections="false"
-		max-connection-usage-count="0" max-pool-size="32"
+		max-connection-usage-count="0" max-pool-size="1"
 		max-wait-time-in-millis="60000" name="connectionPool"
 		non-transactional-connections="false" pool-resize-quantity="2"
 		res-type="javax.sql.DataSource" statement-timeout-in-seconds="-1"
-		steady-pool-size="8" validate-atmost-once-period-in-seconds="0"
+		steady-pool-size="1" validate-atmost-once-period-in-seconds="0"
 		wrap-jdbc-objects="false">
 		<property name="DatabaseName" value="ddehqcgsacci3g" />
 		<property name="User" value="mmmwsvrkwfstit" />
@@ -27,7 +27,5 @@
 		<property name="ServerName" value="ec2-54-225-101-124.compute-1.amazonaws.com" />
 		<property name="Ssl" value="true" />
 		<property name="Sslfactory" value="org.postgresql.ssl.NonValidatingFactory" />
-		<property name="max-pool-size" value="1" />
-		<property name="steady-pool-size" value="1" />
 	</jdbc-connection-pool>
 </resources>
