@@ -1,0 +1,12 @@
+== Konkurs
+
+== Wykorzystywane technologie:
+* ejb
+* jsf
+* prettyfaces
+
+== Serwer:
+* Glassfish 4.0
+
+== Aplikacja w chmurze:
+http://konkurs.waveq.cloudbees.net/
