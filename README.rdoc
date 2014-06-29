@@ -1,12 +1,15 @@
-== Konkurs
+== Contest
 
-== Wykorzystywane technologie:
+== Technologes:
 * ejb
 * jsf
 * prettyfaces
 
-== Serwer:
+== Server:
 * Glassfish 4.0
 
-== Aplikacja w chmurze:
+== Application online:
 http://konkurs.waveq.cloudbees.net/
+
+== Before running
+If you are trying to run this app in eclipse, firstly you have to change context root. Right click on project => properties => Web Project Settings type "/" in input.
