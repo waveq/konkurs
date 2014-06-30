@@ -61,7 +61,7 @@ public class CountrylanguageController implements Serializable {
 			lang = new JsonObject();
 			lang.addProperty("index", i);
 			lang.addProperty("name", row.getCountrylanguagePK().getLanguage() 
-					+ " - " + row.getPercentage());
+					+ " - " + row.getPercentage() + "%");
 			lang.addProperty("value", row.getPercentage());
 			array.add(lang);
 		}
