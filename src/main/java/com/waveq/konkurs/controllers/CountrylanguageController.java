@@ -32,7 +32,7 @@ public class CountrylanguageController implements Serializable {
 	
 	public List<Object[]> getAllCountryLanguages() {
 		List<Object[]> list = clDAO.findAllCountrylanguages();
-		Double population = (Double) clDAO.getWholePopulation().get(0);
+		double population = clDAO.getWholePopulation().get(0);
 		for (Object[] row : list) {
 			row[2] = (Double) row[2] / population * 10000;
 			row[1] =  Math.floor((Double) row[1]);
