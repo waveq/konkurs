@@ -1,4 +1,4 @@
-== Contest
+== Konkurs
 
 == Technologes:
 * ejb
