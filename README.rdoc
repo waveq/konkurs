@@ -11,7 +11,7 @@
 == Application online:
 http://szymon-rekawek.waveq.cloudbees.net/
 
-After not using for 2 hours application becomes hibernated. Waking it up takes up to 2 minutes.
+After not using for 2 hours application becomes hibernated. Waking it up takes up to 5 minutes.
 
 == Before running
 If you are trying to run this app in eclipse, firstly you have to change context root. Right click on project => properties => Web Project Settings type "/" in input.
